@@ -40,5 +40,20 @@ namespace DermaFram
             admin.Show();
             this.Hide();
         }
+
+        private void AddNewCustomer_Click(object sender, EventArgs e)
+        {
+            AddCustomer addcust = new AddCustomer();
+            addcust.Show();
+            this.Hide();
+
+        }
+
+        private void addNewMedicine_Click(object sender, EventArgs e)
+        {
+            AddMedicine addmed = new AddMedicine();
+            addmed.Show();
+            this.Hide();
+        }
     }
 }

@@ -86,6 +86,7 @@ namespace DermaFram
             this.AddNewCustomer.Size = new System.Drawing.Size(267, 73);
             this.AddNewCustomer.TabIndex = 13;
             this.AddNewCustomer.Text = "Add Customer";
+            this.AddNewCustomer.Click += new System.EventHandler(this.AddNewCustomer_Click);
             // 
             // panel2
             // 
@@ -189,6 +190,7 @@ namespace DermaFram
             this.addNewMedicine.Size = new System.Drawing.Size(246, 56);
             this.addNewMedicine.TabIndex = 5;
             this.addNewMedicine.Text = "Add Medicine";
+            this.addNewMedicine.Click += new System.EventHandler(this.addNewMedicine_Click);
             // 
             // pictureBox1
             // 

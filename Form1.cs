@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿using log4net;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +16,19 @@ namespace DermaFram
     public partial class loginpage : Form
     {
 
+        
+        User us = new User();
+
+        /* User model = new User();
+         FileStream fs = new FileStream("../../logging.xml", FileMode.Open);
+         private protected Log logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);// User model = new User();
+         FileStream fs = new FileStream("../../logging.xml", FileMode.Open);
+         private protected ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType); */
+
         User model = new User();
-        /*
-        User model = new User();
-        FileStream fs = new FileStream("../../logging.xml", FileMode.Open);
-        private protected Log logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);// User model = new User();
-        FileStream fs = new FileStream("../../logging.xml", FileMode.Open);
+       // FileStream fs = new FileStream("../../loGGing.xml", FileMode.Open);
         private protected ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        */
+
 
         public loginpage()
         {
@@ -72,28 +78,19 @@ namespace DermaFram
                     Administrator admin = new Administrator();
                     admin.Show();
                     this.Hide();
-                   // logger.Info("Bravo! Inca mai stii parola :))");
+                    logger.Info("Super! Te-ai autentificat cu succes!))");
 
                 }
                 else
                 {
-                    //Singleton s = Singleton.Instance;
-                    //s.Print("Wrong Username or Password!");
-                    // MessageBox.Show("Wrong Username or Password!");
-                   // logger.Warn("Opaa! Da' ce am facut sefu' ?!");
-                   // logger.Error("Ai gresit parola sau/si usernameul!!! Noteaza daca nu tii minte!!!");
+                    Singleton s = Singleton.Instance;
+                    s.Print("Wrong Username or Password!");
+                    MessageBox.Show("Wrong Username or Password!");
+                    logger.Warn("Atentie! Unul sau mai multe caractere sunt gresite!");
+                    logger.Error("Ne pare rau! Parola sau numele de utilizator au fost introduse gresit!");
                 }
             }
-           /* if ((txtUseName.Text == "Laura" || txtUseName.Text == "Irina") && txtPassword.Text == "plswork")
-            {
-                Administrator am = new Administrator();
-                am.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Wrong Username Or Password","Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }*/
+         
         } 
 
         private void label1_Click(object sender, EventArgs e)
